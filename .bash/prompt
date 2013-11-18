@@ -21,15 +21,15 @@ function __prompt_display_process_tree () {
 function __prompt_display_error () {
 	local ret="$?";
 	if [ "$ret" -eq 0 ]; then
-		local msg="${FG_GREEN}:-)";
+		local msg="${FG_GREEN}$ret";
 	else
 		local msg="Error $ret";
 
 		# Replace predefined exit codes with their message.
 		if [ "$ret" -eq 127 ]; then
-			msg='Error 127: command not found';
+			msg='127: command not found';
 		elif [ "$ret" -eq 126 ]; then
-			msg='Error 126: permission denied';
+			msg='126: permission denied';
 		elif [ "$ret" -ge 129 ]; then
 			# Replace exit codes 129 and up by their signal name.
 			# See http://www.faqs.org/docs/abs/HTML/exitcodes.html for more.
@@ -65,7 +65,7 @@ fi;
 command -v git > /dev/null \
 	&& __prompt_vcs_string=' $(git-show-branch)' \
 	|| __prompt_vcs_string='';
-export PS1="\${__prompt_color}-----[ \\t ]$(__prompt_display_process_tree) (!\\!) [ \$(__prompt_display_error) ] \\u@\\h \\w$__prompt_vcs_string\\e[m\\n\\$ ";
+export PS1="\${__prompt_color}-[ \\t ] [ \$(__prompt_display_error) ] \\u@\\h \\w$__prompt_vcs_string\\e[m\\n\\$ ";
 
 # Update the window/tab title for GUI terminals.
 if [ "${TERM#xterm}" != "$TERM" -o "${TERM#screen}" != "$TERM" ]; then
