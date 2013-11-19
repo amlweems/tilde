@@ -69,3 +69,6 @@
 	# simply have created a new branch called "password". (I would be forced
 	# to use "--" to separate paths from banch names, which is a Good Thing™.)
 	go = checkout -B
+[user]
+	email = amlweems@gmail.com
+	name = Anthony Weems
