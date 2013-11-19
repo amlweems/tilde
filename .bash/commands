@@ -1081,3 +1081,7 @@ function ssh-mysqldump {
 	fi;
 	return $result;
 }
+
+function cds() {
+	cd $HOME/School/EE312/Project$1;
+}
