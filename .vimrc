@@ -1,4 +1,4 @@
-ke Vim more useful
+" Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
