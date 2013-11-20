@@ -1,0 +1,2 @@
+db_connect -y /usr/local/opt/metasploit-framework/config/database.yml
+workspace -a playground
