@@ -1,6 +1,1 @@
-#export VIRTUAL_ENV_DISABLE_PROMPT=1
-source $HOME/.virtualenv/cauldron/bin/activate
-
-export PGDATA=/usr/local/var/postgres
-
-export MSF_DATABASE_CONFIG=/usr/local/opt/metasploit-framework/config/database.yml
+#export PGDATA=/usr/local/var/postgres
