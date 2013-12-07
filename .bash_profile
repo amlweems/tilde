@@ -3,4 +3,5 @@ for file in "$(dirname "$BASH_SOURCE")"/.bash/{shell,aliases,commands,path,promp
 done;
 unset file;
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+

@@ -1,9 +1,4 @@
 
 alias i="ipython"
 
-# School
-alias linalg="open $HOME/Dropbox/Textbooks/Linear\ Algebra\ and\ Its\ Applications\ 4th\ \[Lay\].pdf"
-alias systems="open $HOME/Dropbox/Textbooks/Systems\ and\ Signals\ \[Oppenheim\ \&\ Willsky\].pdf"
-alias discrete="open $HOME/Dropbox/Textbooks/Discrete\ and\ Combinatorial\ Mathematics\ 5th\ \[Grimaldi\].pdf"
-
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

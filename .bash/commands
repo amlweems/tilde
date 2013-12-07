@@ -70,9 +70,9 @@ unset method;
 # use "command rm", "\rm", or "/bin/rm" inside your own commands, aliases, or
 # shell functions. Note that separate scripts are not affected by the aliases
 # defined here.
-alias cp='cp -i';
-alias mv='mv -i';
-alias rm='rm -i';
+#alias cp='cp -i';
+#alias mv='mv -i';
+#alias rm='rm -i';
 
 # Editors and pagers
 # -----------------------------------------------------------------------------
@@ -1082,6 +1082,3 @@ function ssh-mysqldump {
 	return $result;
 }
 
-function cds() {
-	cd $HOME/School/EE312/Project$1;
-}
