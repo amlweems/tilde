@@ -1,6 +1,5 @@
 
 alias i="ipython"
-alias locate="glocate"
 alias otp="python -c 'from getpass import getpass; from pyotp import TOTP; print TOTP(getpass()).now()'"
 
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

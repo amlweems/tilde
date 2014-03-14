@@ -1082,3 +1082,6 @@ function ssh-mysqldump {
 	return $result;
 }
 
+webm() {
+ffmpeg -i $1 -q:v 10 -c:v libvpx -c:a libvorbis $2
+}
