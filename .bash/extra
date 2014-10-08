@@ -1,0 +1,32 @@
+
+# ARM gcc toolchain
+export PATH=$PATH:$HOME/gcc-arm-none-eabi/bin
+
+# Android development extras
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Golang extras
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# grep extras
+export GREP_OPTIONS='--color=auto'
+
+# GPG extras
+export LC_CTYPE="en_US.UTF-8"
+export GPG_TTY=$(tty)
+
+# Used to create clean tarballs
+export COPYFILE_DISABLE=true
+
+# Use pyenv to manage multiple python environments
+export PYENV_ROOT=/usr/local/opt/pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+# Play a stream using livestreamer (from pip)
+function play() { mplayer $(livestreamer $1 best --player mplayer); }
+
+# Jump into a school directory matching the given argument
+function sd() { cd ~/School/Current\ Semester/*$1*; }

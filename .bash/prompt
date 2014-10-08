@@ -23,28 +23,7 @@ function __prompt_display_error () {
 	if [ "$ret" -eq 0 ]; then
 		local msg="${FG_GREEN}$ret";
 	else
-		local msg="Error $ret";
-
-		# Replace predefined exit codes with their message.
-		if [ "$ret" -eq 127 ]; then
-			msg='127: command not found';
-		elif [ "$ret" -eq 126 ]; then
-			msg='126: permission denied';
-		elif [ "$ret" -ge 129 ]; then
-			# Replace exit codes 129 and up by their signal name.
-			# See http://www.faqs.org/docs/abs/HTML/exitcodes.html for more.
-			set -- $(trap -l);
-			while [ $# -ge 2 ]; do
-				local num="${1%)}";
-				local name="$2";
-				shift 2;
-				if [ "$ret" -eq $((128 + $num)) ]; then
-					msg="$name";
-					break;
-				fi;
-			done;
-		fi;
-		msg="${FG_RED}${FONT_REVERSE}$msg${FONT_NOT_REVERSE}";
+		local msg="${FG_RED}$ret";
 	fi;
 
 	# Show the error message.

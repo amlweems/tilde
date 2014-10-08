@@ -40,6 +40,8 @@ syntax on
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+" Set text width to 80 characters
+set textwidth=80
 " Show “invisible” characters
 "set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 "set list
@@ -67,13 +69,11 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+" Lower timeout on commands
+set timeoutlen=20
+set ttimeoutlen=-1
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()

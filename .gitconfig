@@ -70,5 +70,6 @@
 	# to use "--" to separate paths from banch names, which is a Good Thing™.)
 	go = checkout -B
 [user]
-	email = amlweems@gmail.com
-	name = Anthony Weems
+	email = "amlweems@gmail.com"
+	name = "Anthony Weems"
+	signingkey = B56CD331
