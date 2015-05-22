@@ -9,7 +9,7 @@
 shopt -s nocaseglob;
 
 # Treat ** as a special globbing character
-shopt -s globstar;
+shopt -s globstar 2>/dev/null;
 
 # Do not autocomplete when accidentally pressing Tab on an empty line. (It takes
 # forever and yields "Display all 15 gazillion possibilites?")
@@ -23,6 +23,8 @@ bind '\C-w:unix-filename-rubout'
 # Note that you can still override this with ">|".
 # set -o noclobber;
 
+export PROMPT_DIRTRIM=2
+
 # Prefer English and use UTF-8.
 printf -v available_locales ' %s ' $(locale -a);
 for lang in en_US en_GB en; do
@@ -35,6 +37,10 @@ for lang in en_US en_GB en; do
 	done;
 done;
 unset available_locales lang locale;
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
